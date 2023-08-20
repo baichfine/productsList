@@ -1,0 +1,135 @@
+@import './base/ApCreateProduct';
+@import './base/AppProductList';
+@import './base/AppLoader';
+@import './base/AppAlert';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+::-webkit-datetime-edit-month-field:focus {
+  background-color: #51078d;
+}
+::-webkit-datetime-edit-day-field:focus {
+  background-color: #51078d;
+}
+::-webkit-datetime-edit-year-field:focus {
+  background-color: #51078d;
+}
+::-webkit-calendar-picker-indicator {
+  font-size: 1rem;
+  font-family: Inter, Roboto, Oxygen, Fira Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: Inter, Roboto, Oxygen, Fira Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  background-image: url(./images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.btn {
+  color: #fff;
+  position: relative;
+  border-radius: 10px;
+  letter-spacing: 0.05em;
+  border: 1px solid #6e00c9;
+  text-transform: uppercase;
+  padding: 0.8rem 0.8rem;
+  font-weight: 600;
+  outline: none;
+  background: #6e00c9;
+  transition: all 0.22s;
+  font-size: 12px;
+  font-family: Helvetica 'Courier New', Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.divBtn {
+  display: block;
+  text-align: center;
+  border-top: 1px solid #eaecef;
+  font-size: 14px;
+  margin-right: 38px;
+}
+.divBtn button {
+  margin-top: 1rem;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 1 !important;
+  background: #eee !important;
+  border-color: #ddd !important;
+  color: #999 !important;
+  padding: 0.8rem 0.8rem;
+}
+
+.btn.primary {
+  background: #51078d;
+  color: #fff;
+}
+
+.btn.delete {
+  background: #fff;
+  color: #c96f6e;
+  border-color: #c96f6e;
+  padding: 0.5em 0.5rem;
+}
+.btn.recover {
+  background: #fff;
+  color: #6ea867;
+  border-color: #6ea867;
+  padding: 0.5em 0.5rem;
+}
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  height: 100%;
+}
+
+.card {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+}
+
+.labelMain {
+  display: block;
+  text-align: right;
+  border-bottom: 1px solid #eaecef;
+  font-size: 14px;
+  padding-bottom: 0.5rem;
+  color: #51078d;
+}
+
+.labelMain span {
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.card.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card.center h4 {
+  margin-right: 38px;
+}
+#loadList {
+  margin-right: 38px;
+}

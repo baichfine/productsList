@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container">
+    <AppAlert :alert="alert" @close="closeAlert"></AppAlert>
+    <AppCreateProduct></AppCreateProduct>
+    <AppLoader v-if="loading"></AppLoader>
+    <AppProductList
+      v-else
+      @load="loadProducts"
+      @crossOut="getCrossOutProduct"
+      @remove="removeProduct"
+      :products="products"
+    ></AppProductList>
+  </div>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
+<script setup>
+import AppProductList from './components/AppProductList.vue'
+import AppLoader from './components/AppLoader.vue'
+import AppAlert from './components/AppAlert.vue'
+import AppCreateProduct from '@/components/AppCreateProduct'
+import { computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
+import { consts } from '@/store/consts'
 
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
-</script>
+const store = useStore()
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+const loading = computed(() => store.getters.loading)
+const products = computed(() => store.getters.products)
+const alert = computed(() => store.getters.alert)
+
+onMounted(() => {
+  loadProducts()
+})
+function getCrossOutProduct(item) {
+  store.dispatch(consts.GET_CROSS_OUT_PRODUCT, item)
 }
-</style>
+function removeProduct(item) {
+  store.dispatch(consts.REMOVE_PRODUCT, item)
+}
+function loadProducts() {
+  store.dispatch(consts.LOAD_PRODUCTS)
+}
+function closeAlert() {
+  store.commit(consts.SET_VALUE, {
+    type: consts.SET_ALERT,
+    value: null
+  })
+}
+</script>

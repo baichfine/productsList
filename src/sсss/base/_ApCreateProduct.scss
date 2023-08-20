@@ -1,0 +1,74 @@
+.form-control {
+  position: relative;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-control input,
+.form-control select {
+  margin: 0.5rem;
+  outline: none;
+  border: 2px solid #fff;
+  border-bottom: 2px solid #eaecef;
+  display: block;
+  color: #51078d;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #eaecef;
+  width: 400px;
+}
+.form-control input::placeholder {
+  font-size: 13px;
+  font-family: Inter, Roboto, Oxygen, Fira Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-control input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form-control.invalid input {
+  border-color: #e53935;
+}
+
+.form-control label,
+.form-control span {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.form-control img {
+  width: 30px;
+}
+#inputValue input {
+  transition: border 0.22s;
+  border-bottom: 2px solid #51078d;
+  background-color: #fff;
+  width: 400px;
+}
+.form-control div div {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+#spanPlaceholder {
+  width: 150px;
+  font-size: 14px;
+  font-family: Inter, Roboto, Oxygen, Fira Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.form-control input:active,
+.form-control input:focus {
+  transition: border 0.22s;
+  border-bottom: 2px solid #51078d;
+  background-color: #fff;
+  //#51078d
+  //#3b0666
+}
